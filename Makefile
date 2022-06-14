@@ -1,6 +1,6 @@
-start-server:
+server:
 	cd server && uvicorn app.main:app --reload
-start-client:
+client:
 	cd client && npm start
 
-.PHONY: start-server start-client
+.PHONY: server client

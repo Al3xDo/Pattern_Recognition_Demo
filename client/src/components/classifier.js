@@ -2,39 +2,43 @@ import React from 'react';
 import { useState } from 'react';
 
 
-const Classifier = () => {
+const Classifier = (props) => {
     const [selectedImage, setSelectedImage] = useState(null);
+    const [errorText, setErrorText] = useState(null);
 
     const onClassifyImage = async (selectedImage) => {
-        if (selectedImage != null) {
+        if (selectedImage !== null) {
             //If file selected then create FormData
-            const fileToUpload = selectedImage;
             const data = new FormData();
-            data.append('name', 'Image Upload');
-            data.append('file_attachment', fileToUpload);
+            data.append('file', selectedImage);
             let res = await fetch(
-                'http://localhost:8000/',
+                'http://127.0.0.1:8000/',
                 {
-                    method: 'post',
+                    method: 'POST',
                     body: data,
                     headers: {
-                        'Content-Type': 'multipart/form-data; ',
+                        'Access-Control-Allow-Origin': "*",
                     },
                 }
             );
             let responseJson = await res.json();
-            if (responseJson.status === 1) {
-                alert('Upload Successful');
+            if (responseJson.hasOwnProperty('detail')) {
+                props.onChangeLabel(null)
+                setErrorText(responseJson.detail)
+            }
+            if (responseJson.hasOwnProperty('label')) {
+                props.onChangeLabel(responseJson.label)
+                setErrorText(null)
             }
         } else {
             //if no file selected the show alert
-            alert('Please Select File first');
+            setErrorText("No image selected")
         }
     }
     return (
         <>
 
-            <div className="w-50 p-3 mx-auto border mt-5" style={{ "height": "600px" }}>
+            <div className="p-3 mx-auto border mt-5" style={{ "height": "85%", "width": "100%" }}>
                 {selectedImage && (
                     <img alt="not fount" className='w-100' src={URL.createObjectURL(selectedImage)} />
                 )}
@@ -42,11 +46,13 @@ const Classifier = () => {
             <div className="mt-4">
                 <input type="file" name="myImage"
                     onChange={(event) => {
-                        console.log(event.target.files[0]);
                         setSelectedImage(event.target.files[0]);
                     }} />
             </div>
             <button className='btn btn-primary mt-4 btn-lg' onClick={() => onClassifyImage(selectedImage)}> Classify </button>
+            {errorText && (
+                <p className='text-danger'>{errorText}</p>
+            )}
         </>
     );
 }
