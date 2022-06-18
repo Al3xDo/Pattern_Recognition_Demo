@@ -1,10 +1,11 @@
 import React from 'react';
 import { useState } from 'react';
-
+import placeholderImage from "../asset/image/placeholderImage.png"
 
 const Classifier = (props) => {
     const [selectedImage, setSelectedImage] = useState(null);
     const [errorText, setErrorText] = useState(null);
+    const [uploaded, setUploaded] = useState(false);
 
     const onClassifyImage = async (selectedImage) => {
         if (selectedImage !== null) {
@@ -27,7 +28,7 @@ const Classifier = (props) => {
                 setErrorText(responseJson.detail)
             }
             if (responseJson.hasOwnProperty('label')) {
-                props.onChangeLabel(responseJson.label)
+                props.onChangeLabel(responseJson.label, responseJson.data)
                 setErrorText(null)
             }
         } else {
@@ -37,16 +38,17 @@ const Classifier = (props) => {
     }
     return (
         <>
-
             <div className="p-3 mx-auto border mt-5" style={{ "height": "85%", "width": "100%" }}>
-                {selectedImage && (
-                    <img alt="not fount" className='w-100' src={URL.createObjectURL(selectedImage)} />
-                )}
+                {selectedImage ? (
+                    <img alt="not found" className='w-100' src={URL.createObjectURL(selectedImage)} />
+                ) :
+                    <img alt="not found" className='w-100' src={placeholderImage} />}
             </div>
             <div className="mt-4">
                 <input type="file" name="myImage"
                     onChange={(event) => {
                         setSelectedImage(event.target.files[0]);
+                        setUploaded(true)
                     }} />
             </div>
             <button className='btn btn-primary mt-4 btn-lg' onClick={() => onClassifyImage(selectedImage)}> Classify </button>

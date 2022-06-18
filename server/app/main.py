@@ -1,19 +1,23 @@
 import io
+import os
 from fastapi import FastAPI, UploadFile,Response, status
 import torch
 from PIL import Image
 import torchvision.transforms as transforms
 import logging
 from fastapi.middleware.cors import CORSMiddleware
+import torchvision.transforms as transforms
+from torchvision.transforms import InterpolationMode
 
+from app.wiki_parser import get_result
 app = FastAPI()
 LOG= logging.getLogger("INFO")
 model=None
 map_label = {
-    0: "bamboo", 1: "banana", 2: "cacao", 3: "cinnamon", 4: "coffeearabica",
-    5: "dragonfruit", 6: "durian", 7: "frangipani", 8: "guava", 9: "jackfruit", 10: "lychee",
-    11: "mango", 12: "mangosteen", 13: "nilam", 14: "papaya", 15: "passiflora", 16: "sawo", 17: "snakefruit",
-    18: "starfruit", 19: "sugarpalm", 20: "suweg", 21: "taro", 22: "vanilla", 23: "waterguava", 24: "whitepepper", 25: "zodia"
+    0: "bamboo", 1: "banana", 2: "Cocoa_bean", 3: "cinnamon", 4: "coffeearabica",
+    5: "Pitaya", 6: "durian", 7: "Plumeria", 8: "guava", 9: "jackfruit", 10: "lychee",
+    11: "mango", 12: "mangosteen", 13: "nilam", 14: "papaya", 15: "passiflora", 16: "Manilkara zapota", 17: "Salak",
+    18: "Carambola", 19: "Arenga pinnata", 20: "suweg", 21: "taro", 22: "vanilla", 23: "Syzygium samarangense", 24: "Black pepper", 25: "zodia"
 }
 
 origins = [
@@ -32,6 +36,17 @@ def file_is_validated(filename: str) -> bool:
     if filename.split(".")[-1] in ['jpg', 'jpeg', 'png']:
         return True
     return False
+
+def _transform(image):
+    transform_stages=[]
+    size= int((256 / 224) * 224)
+    transform_stages.append(transforms.Resize(size, interpolation=InterpolationMode.BICUBIC))
+    transform_stages.append(transforms.CenterCrop(224))
+    transform_stages.append(transforms.ToTensor())
+
+    transform_pipline = transforms.Compose(transform_stages)
+    tensor = transform_pipline(image)[None,:,:,:]
+    return tensor
 
 @app.on_event("startup")
 def start_uo():
@@ -53,10 +68,11 @@ async def classifer(file: UploadFile, resp: Response):
         resp.status_code = status.HTTP_406_NOT_ACCEPTABLE
         return {"detail": "File type is not allowed"}
     image_bytes = await file.read()
-    print(file.filename)
     image= Image.open(io.BytesIO(image_bytes))
-    new_image = image.resize((224, 224))
-    transform = transforms.ToTensor()
-    tensor = transform(new_image)[None,:,:,:]
+    tensor = _transform(image)
     res= torch.argmax(model(tensor))
-    return {"label": map_label[res.item()] }
+    label =  map_label[res.item()]
+    LOG.info(f'Label {label}')
+    data= get_result(label)
+    return {"label": label,
+            "data": data}
