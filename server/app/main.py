@@ -71,7 +71,8 @@ async def classifer(file: UploadFile, resp: Response):
     image_bytes = await file.read()
     image= Image.open(io.BytesIO(image_bytes))
     tensor = _transform(image)
-    res= torch.argmax(model(tensor))
+    with torch.no_grad():
+        res= torch.argmax(model(tensor))
     label =  map_label[res.item()]
     LOG.info(f'Label {label}')
     data= get_result(label)
