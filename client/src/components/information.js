@@ -1,5 +1,4 @@
 import React from 'react';
-import mock_2 from "../asset/image/mock_2.jpg"
 const Information = (props) => {
     const { label, text, url1, url2, link } = props
 

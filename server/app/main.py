@@ -12,6 +12,7 @@ from torchvision.transforms import InterpolationMode
 from app.wiki_parser import get_result
 app = FastAPI()
 LOG= logging.getLogger("INFO")
+
 model=None
 map_label = {
     0: "bamboo", 1: "banana", 2: "Cocoa_bean", 3: "cinnamon", 4: "coffeearabica",
