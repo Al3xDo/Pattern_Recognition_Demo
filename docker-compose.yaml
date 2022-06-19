@@ -13,6 +13,7 @@ services:
     ports:
       - "3000:3000"
   nginx:
+    container_name: pt-demo-nginx
     image: nginx
     build:
       context: ./client

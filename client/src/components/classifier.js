@@ -5,7 +5,6 @@ import placeholderImage from "../asset/image/placeholderImage.png"
 const Classifier = (props) => {
     const [selectedImage, setSelectedImage] = useState(null);
     const [errorText, setErrorText] = useState(null);
-    const [uploaded, setUploaded] = useState(false);
 
     const onClassifyImage = async (selectedImage) => {
         if (selectedImage !== null) {
@@ -48,7 +47,6 @@ const Classifier = (props) => {
                 <input type="file" name="myImage"
                     onChange={(event) => {
                         setSelectedImage(event.target.files[0]);
-                        setUploaded(true)
                     }} />
             </div>
             <button className='btn btn-primary mt-4 btn-lg' onClick={() => onClassifyImage(selectedImage)}> Classify </button>
