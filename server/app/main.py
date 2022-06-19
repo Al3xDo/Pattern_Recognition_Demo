@@ -1,5 +1,4 @@
 import io
-import os
 from fastapi import FastAPI, UploadFile,Response, status
 import torch
 from PIL import Image
@@ -15,7 +14,7 @@ LOG= logging.getLogger("INFO")
 
 model=None
 map_label = {
-    0: "bamboo", 1: "banana", 2: "Cocoa_bean", 3: "cinnamon", 4: "coffeearabica",
+    0: "bamboo", 1: "banana", 2: "Theobroma cacao", 3: "cinnamon", 4: "coffeearabica",
     5: "Pitaya", 6: "durian", 7: "Plumeria", 8: "guava", 9: "jackfruit", 10: "lychee",
     11: "mango", 12: "mangosteen", 13: "nilam", 14: "papaya", 15: "passiflora", 16: "Manilkara zapota", 17: "Salak",
     18: "Carambola", 19: "Arenga pinnata", 20: "suweg", 21: "taro", 22: "vanilla", 23: "Syzygium samarangense", 24: "Black pepper", 25: "zodia"
