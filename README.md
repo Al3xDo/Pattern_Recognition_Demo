@@ -25,8 +25,8 @@ Accuracy đạt 1.0 trên tập private test. Team [UIT_A_H_H_N](https://www.kag
 | :---: | --- | --- | --- | --- |
 | 1 | Đỗ Nguyễn Hoàng Huy | 19521603 | 19521603@gm.uit.edu.vn | [Al3xDo](https://github.com/Al3xDo) |
 | 2 | Trần Gia Nghĩa | 19521901 | 19521901@gm.uit.edu.vn | [SoulOfWindTGN](https://github.com/SoulOfWindTGN) |
-| 3 | Hồ Mỹ Hạnh | 19521470 | 19521470@gm.uit.edu.vn | [name](url) |
-| 4 | Nguyễn Thị Thúy An | 19521183 | 19521183@gm.uit.edu.vn | [name](url) |
+| 3 | Hồ Mỹ Hạnh | 19521470 | 19521470@gm.uit.edu.vn | [homyhanh](https://github.com/homyhanh) |
+| 4 | Nguyễn Thị Thúy An | 19521183 | 19521183@gm.uit.edu.vn | [UIT-19521183](https://github.com/UIT-19521183) |
 
 ## [Notebook](https://github.com/SoulOfWindTGN/Pattern_Recognition_Demo/tree/main/notebooks)
 - [Swin Transformer for train](https://github.com/SoulOfWindTGN/Pattern_Recognition_Demo/blob/main/notebooks/SwinTransformerTrain.ipynb)
