@@ -32,7 +32,9 @@ Accuracy đạt 1.0 trên tập private test. Team [UIT_A_H_H_N](https://www.kag
 - [Swin Transformer for train](https://github.com/SoulOfWindTGN/Pattern_Recognition_Demo/blob/main/notebooks/SwinTransformerTrain.ipynb)
 - [Swin Transformer for test](https://github.com/SoulOfWindTGN/Pattern_Recognition_Demo/blob/main/notebooks/SwinTransformerTest.ipynb)
 - [MobileNet](https://github.com/SoulOfWindTGN/Pattern_Recognition_Demo/blob/main/notebooks/mobilenet.ipynb)
-- [VGG16](https://github.com/SoulOfWindTGN/Pattern_Recognition_Demo/blob/main/notebooks/vgg-baseline.ipynb)
+- [VGG16](https://github.com/Al3xDo/Pattern_Recognition_Demo/blob/main/notebooks/vgg-baseline.ipynb)
+- [Color_histogram_Hu_Moments__Haralick_Texture](https://github.com/Al3xDo/Pattern_Recognition_Demo/blob/main/notebooks/Color_histogram_Hu_Moments__Haralick_Texture.ipynb)
+- [ColorHistogram_HOG_LBP](https://github.com/Al3xDo/Pattern_Recognition_Demo/blob/main/notebooks/ColorHistogram_HOG_LBP.ipynb)
 ## Respository
 - [Swin Transformer](https://github.com/SoulOfWindTGN/Swin-Transformer)
 ## Demo
