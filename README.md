@@ -3,7 +3,7 @@
 </p>
 
 <h1 align="center"> CS338 - NHẬN DẠNG </h1>
-<h1 align="center"> ĐỒ ÁN CUỐI KỲ: PHÂN LOẠI CÁC LOẠI THỰC VẬT ĐÔNG NAM Á </h1>
+<h1 align="center"> ĐỒ ÁN CUỐI KỲ: PHÂN LOẠI CÁC LOẠI THỰC VẬT ĐÔNG NAM Á (KAGGLE)</h1>
 
 ## Giảng viên hỗ trợ:
     Ths. Đỗ Văn Tiến - tiendv@uit.edu.vn
@@ -28,8 +28,11 @@ Accuracy đạt 1.0 trên tập private test. Team [UIT_A_H_H_N](https://www.kag
 | 3 | Hồ Mỹ Hạnh | 19521470 | 19521470@gm.uit.edu.vn | [name](url) |
 | 4 | Nguyễn Thị Thúy An | 19521183 | 19521183@gm.uit.edu.vn | [name](url) |
 
-## Notebook
-
-## Resposiroty
+## [Notebook](https://github.com/SoulOfWindTGN/Pattern_Recognition_Demo/tree/main/notebooks)
+- [Swin Transformer for train](https://github.com/SoulOfWindTGN/Pattern_Recognition_Demo/blob/main/notebooks/SwinTransformerTrain.ipynb)
+- [Swin Transformer for test](https://github.com/SoulOfWindTGN/Pattern_Recognition_Demo/blob/main/notebooks/SwinTransformerTest.ipynb)
+- [MobileNet](https://github.com/SoulOfWindTGN/Pattern_Recognition_Demo/blob/main/notebooks/mobilenet.ipynb)
+- [VGG16](https://github.com/SoulOfWindTGN/Pattern_Recognition_Demo/blob/main/notebooks/vgg-baseline.ipynb)
+## Respository
 - [Swin Transformer](https://github.com/SoulOfWindTGN/Swin-Transformer)
 
