@@ -36,14 +36,12 @@ def predict_keras_model( model_name="mobilenet"):
     img = cv2.resize(image,(224,224))     # resize image to match model's expected sizing
     img = img.reshape(1,224,224,3)
     INFERENCE_TIME[model_name]= [0]*10
-    mobilenet=keras.models.load_model("./test_inferencetime/weights/mobilenet.keras")
+    mobilenet=keras.models.load_model(f"./test_inferencetime/weights/{model_name}.keras")
     for i in range(10):
         start = time.time()
         mobilenet.predict(img)
         INFERENCE_TIME[model_name][i] = time.time() - start
 
-predict_keras_model()
-predict_torch_model()
-print(INFERENCE_TIME)
+predict_keras_model("vgg16")
 for k in INFERENCE_TIME.keys():
     print(f'{k} - {sum(INFERENCE_TIME[k]) / 10}')
