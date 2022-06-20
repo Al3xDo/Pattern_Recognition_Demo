@@ -3,7 +3,7 @@ import requests
 import os
 
 
-INDO_PLANTS= ['Suweg', 'zodia', 'nilan' ]
+INDO_PLANTS= ['suweg', 'zodia', 'nilan' ]
 
 def get_raw_intro_text(title):
     response = requests.get(
