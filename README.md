@@ -33,6 +33,8 @@ Accuracy đạt 1.0 trên tập private test. Team [UIT_A_H_H_N](https://www.kag
 - [Swin Transformer for test](https://github.com/SoulOfWindTGN/Pattern_Recognition_Demo/blob/main/notebooks/SwinTransformerTest.ipynb)
 - [MobileNet](https://github.com/SoulOfWindTGN/Pattern_Recognition_Demo/blob/main/notebooks/mobilenet.ipynb)
 - [VGG16](https://github.com/SoulOfWindTGN/Pattern_Recognition_Demo/blob/main/notebooks/vgg-baseline.ipynb)
+- [Color Histogram + HOG +LBP](https://github.com/SoulOfWindTGN/Pattern_Recognition_Demo/blob/main/notebooks/ColorHistogram_HOG_LBP.ipynb)
+- [Color histogram + Hu Moments + Haralick Texture](https://github.com/SoulOfWindTGN/Pattern_Recognition_Demo/blob/main/notebooks/Color_histogram_Hu_Moments__Haralick_Texture.ipynb)
 ## Respository
 - [Swin Transformer](https://github.com/SoulOfWindTGN/Swin-Transformer)
 ## Demo
