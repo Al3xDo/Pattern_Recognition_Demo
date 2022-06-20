@@ -23,7 +23,7 @@ Accuracy đạt 1.0 trên tập private test. Team [UIT_A_H_H_N](https://www.kag
 ## Thành viên thực 
 | STT | Họ tên | MSSV | E-mail | Github |
 | :---: | --- | --- | --- | --- |
-| 1 | Đỗ Nguyễn Hoàng Huy | 19521603 | 19521603@gm.uit.edu.vn | [trankha1655](https://github.com/trankha1655) |
+| 1 | Đỗ Nguyễn Hoàng Huy | 19521603 | 19521603@gm.uit.edu.vn | [Al3xDo](https://github.com/Al3xDo) |
 | 2 | Trần Gia Nghĩa | 19521901 | 19521901@gm.uit.edu.vn | [SoulOfWindTGN](https://github.com/SoulOfWindTGN) |
 | 3 | Hồ Mỹ Hạnh | 19521470 | 19521470@gm.uit.edu.vn | [name](url) |
 | 4 | Nguyễn Thị Thúy An | 19521183 | 19521183@gm.uit.edu.vn | [name](url) |
@@ -35,4 +35,22 @@ Accuracy đạt 1.0 trên tập private test. Team [UIT_A_H_H_N](https://www.kag
 - [VGG16](https://github.com/SoulOfWindTGN/Pattern_Recognition_Demo/blob/main/notebooks/vgg-baseline.ipynb)
 ## Respository
 - [Swin Transformer](https://github.com/SoulOfWindTGN/Swin-Transformer)
+## Demo
+### Instalation
+#### Docker
+`docker-compose up`
+#### Manual (window)
+`cd server && python pip install -r requirements.txt
+make server`
 
+`make client`
+
+#### Diagram
+<img src="https://github.com/Al3xDo/Pattern_Recognition_Demo/blob/main/Doc/PT_demo.png" width="100%">
+<br/>
+<img src="https://github.com/Al3xDo/Pattern_Recognition_Demo/blob/main/Doc/PT_demo-Page-2.png" width="100%">
+<br/>
+<img src="https://github.com/Al3xDo/Pattern_Recognition_Demo/blob/main/Doc/demo.png" width="100%">
+<br/>
+### Website Sreenshot
+<img src="https://github.com/Al3xDo/Pattern_Recognition_Demo/blob/main/Doc/test.png" width="100%">
